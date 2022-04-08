@@ -3,6 +3,8 @@ export const products = [
     _id: "1",
     name: "boAt Airdopes 281 Pro",
     image: "/images/boat airdopes.jpg",
+    detailedName:
+      "boAt Airdopes 281 Pro True Wireless Earbuds with ENx™ Tech, Upto 32 Hours Playback, ASAP Charge, Dual Mics, boAt Signature Sound, IWP, IPX5, BT v5.1 and Instant Reset Button(Viper Green)",
     description: [
       "Clear Voice Calls- Airdopes 281 Pro comes equipped with 4 mics and these ENx equipped mics deliver impeccable voice quality so that you can be heard clearly via voice calls.",
       "ASAP Charge- With this technology, these true wireless earbuds fetch a playback time of up to 60 mins in just 5 mins of charge.",
@@ -20,6 +22,7 @@ export const products = [
     _id: "2",
     name: "iPhone 13 Mini",
     image: "/images/iPhone 13 mini.jpg",
+    detailedName: "Apple iPhone 13 (128 GB) - Green",
     description: [
       "13 cm (5.4-inch) Super Retina XDR display",
       "Cinematic mode adds shallow depth of field and shifts focus automatically in your videos",
@@ -37,6 +40,8 @@ export const products = [
     _id: "3",
     name: "Dr. Korpet 3 in 1 vaporizer",
     image: "/images/vaporizer.jpg",
+    detailedName:
+      "Dr. Korpet 3 in 1 vaporizer steamer for cough,cold and facial, inhaler & steamer for cold and cough - Blue",
     description: [
       "Dr. Korpet Vaporizer is Made in India Product",
       "Use water from tap, Don’t use RO/Filter/Mineral water, also put pinch of salt in case of low or No Steam",
@@ -54,6 +59,8 @@ export const products = [
     _id: "4",
     name: "Noise ColorFit Pulse Spo2",
     image: "/images/watch.jpg",
+    detailedName:
+      "Noise ColorFit Pulse Spo2 Smart Watch with 10 days battery life, 60+ Watch Faces, 1.4 Full Touch HD Display Smartwatch, 24x7 Heart Rate Monitor Smart Band, Sleep Monitoring Smart Watches for Men and Women & IP68 Waterproof (Jet Black)",
     description: [
       "10-day battery: With a battery backup of 10 days, just concentrate on your game without stopping.",
       "Noise Health Suite: Automatically monitor your blood oxygen (Spo2 levels), real-time heart rate, and provide comprehensive analysis of your sleep quality (deep sleep,light sleep and wake up time) on this smart watch.",
@@ -71,6 +78,7 @@ export const products = [
     _id: "5",
     name: "SanDisk Ultra Dual 64GB USB 3.0",
     image: "/images/pendrive.jpg",
+    detailedName: "SanDisk Ultra Dual 64GB USB 3.0 OTG Pen Drive",
     description: [
       "Compatible with Micro USB Type 'B' Android based Smartphones & Tablets. Windows 7, Windows 8, Windows 10, Mac OS X v10.9+ and higher",
       "Free up space on your OTG-enabled Android phone",
@@ -86,8 +94,9 @@ export const products = [
   },
   {
     _id: "6",
-    name: "Sunfeast Dark Fantasy Choco Fills",
+    name: "Sunfeast Dark Fantasy",
     image: "/images/dark_fantacy.jpg",
+    detailedName: "Sunfeast Dark Fantasy Choco Fills, 600g",
     description: [
       "A one of a kind chocolate indulgence, Sunfeast Dark Fantasy Choco Fills is the perfect partner for cravings that you Can’tWaitWon’tWait to give in",
       "It has a perfectly baked golden cookie on the outside; luscious molten chocolate on the inside",
@@ -103,8 +112,10 @@ export const products = [
   },
   {
     _id: "7",
-    name: "Flyberry Gourmet Medjoul Dates (Khajoor)",
+    name: "Flyberry Gourmet Medjoul Dates",
     image: "/images/dates.jpg",
+    detailedName:
+      "Flyberry Gourmet Medjoul Dates (Khajoor) Dry Fruits, 800 G (Snacks Rich in Dietary Fibre)",
     description: [
       "Top-grade medjoul dates.",
       "Naturally sweet, fat free and have no cholesterol.",

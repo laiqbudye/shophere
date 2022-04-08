@@ -24,10 +24,10 @@ const ProductPage = ({ match }) => {
               <Image src={currentProduct.image} fluid></Image>
             </Col>
 
-            <Col md={5}>
+            <Col md={5} className='my-5'>
               <ListGroup variant="flush">
                 <ListGroup.Item>
-                  <h3>{currentProduct.name}</h3>
+                  <h3>{currentProduct.detailedName}</h3>
                 </ListGroup.Item>
 
                 <ListGroup.Item>
