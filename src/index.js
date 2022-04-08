@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './bootstrap-theme/bootstrap.min-dark.css';
+import './bootstrap-theme/bootstrap.min-light.css';
 import App from './App';
 
 ReactDOM.render(
