@@ -1,15 +1,22 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
 import { Row, Col, Button, Image, ListGroup, Card } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
-import { products } from "../data/dummyData";
+import { useDispatch, useSelector } from "react-redux";
 import Rating from "../components/Rating";
 import NoProductFound from "../components/NoProductFound";
+import { getProduct } from "../redux/actions/productsActions";
 
-const ProductPage = ({ match }) => {
-  const currentProduct = products.find(
-    (product) => product._id === match.params.id
-  );
+const ProductPage = ({
+  match: {
+    params: { id },
+  },
+}) => {
+  const dispatch = useDispatch();
+  const currentProduct = useSelector((state) => state.products.currentProduct);
+
+  useEffect(() => {
+    dispatch(getProduct(id));
+  }, [id]);
 
   return (
     <>
@@ -24,7 +31,7 @@ const ProductPage = ({ match }) => {
               <Image src={currentProduct.image} fluid></Image>
             </Col>
 
-            <Col md={5} className='my-5'>
+            <Col md={5} className="my-5">
               <ListGroup variant="flush">
                 <ListGroup.Item>
                   <h3>{currentProduct.detailedName}</h3>
