@@ -27,8 +27,9 @@ const ProductPage = ({
 
   return (
     <>
-      {loading && <Loader />}
-      {currentProduct ? (
+      {loading ? (
+        <Loader />
+      ) : currentProduct ? (
         <>
           <LinkContainer to="/">
             <Button className="my-3">Go Back</Button>
@@ -105,4 +106,3 @@ const ProductPage = ({
 };
 
 export default ProductPage;
- 
