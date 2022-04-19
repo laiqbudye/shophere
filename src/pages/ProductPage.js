@@ -4,7 +4,8 @@ import { LinkContainer } from "react-router-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Rating from "../components/Rating";
 import NoProductFound from "../components/NoProductFound";
-import { getProduct } from "../redux/actions/productsActions";
+import { getProduct, clearProduct } from "../redux/actions/productsActions";
+import Loader from "../components/Loader";
 
 const ProductPage = ({
   match: {
@@ -12,14 +13,21 @@ const ProductPage = ({
   },
 }) => {
   const dispatch = useDispatch();
-  const currentProduct = useSelector((state) => state.products.currentProduct);
+  const currentProductDetails = useSelector((state) => state.products);
+
+  const { loading, currentProduct } = currentProductDetails;
 
   useEffect(() => {
     dispatch(getProduct(id));
+
+    return () => {
+      dispatch(clearProduct());
+    };
   }, [id]);
 
   return (
     <>
+      {loading && <Loader />}
       {currentProduct ? (
         <>
           <LinkContainer to="/">
@@ -97,3 +105,4 @@ const ProductPage = ({
 };
 
 export default ProductPage;
+ 

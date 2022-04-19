@@ -40,3 +40,9 @@ export const getProduct = (product_id) => async (dispatch) => {
     });
   }
 };
+
+export const clearProduct = () => async (dispatch) =>  {
+  dispatch({
+    type: productConstants.CLEAR_PRODUCT,
+  });
+};

@@ -53,6 +53,13 @@ export const productsReducer = (state = initialState, action) => {
         error: action.payload,
       };
 
+    case productConstants.CLEAR_PRODUCT:
+      return {
+        ...state,
+        loading: false,
+        currentProduct: {},
+      };
+
     default:
       return state;
   }
