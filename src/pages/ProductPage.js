@@ -1,5 +1,13 @@
-import React, { useEffect } from "react";
-import { Row, Col, Button, Image, ListGroup, Card } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import {
+  Row,
+  Col,
+  Button,
+  Image,
+  ListGroup,
+  Card,
+  Form,
+} from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Rating from "../components/Rating";
@@ -8,6 +16,7 @@ import { getProduct, clearProduct } from "../redux/actions/productsActions";
 import Loader from "../components/Loader";
 
 const ProductPage = ({
+  history,
   match: {
     params: { id },
   },
@@ -17,6 +26,8 @@ const ProductPage = ({
 
   const { loading, currentProduct } = currentProductDetails;
 
+  const [quantity, setQuantity] = useState(1);
+
   useEffect(() => {
     dispatch(getProduct(id));
 
@@ -24,6 +35,11 @@ const ProductPage = ({
       dispatch(clearProduct());
     };
   }, [id]);
+
+  //private functions
+  const addToCartHandler = () => {
+    history.push(`/cart/${id}?qty=${quantity}`);
+  };
 
   return (
     <>
@@ -83,12 +99,35 @@ const ProductPage = ({
                   </Row>
                 </ListGroup.Item>
 
+                {currentProduct.countInStock > 0 && (
+                  <ListGroup.Item>
+                    <Row>
+                      <Col>Status:</Col>
+                      <Col>
+                        <Form.Control
+                          as="select"
+                          value={quantity}
+                          onChange={(e) => setQuantity(e.target.value)}
+                        >
+                          {[...Array(currentProduct.countInStock).keys()].map(
+                            (item) => (
+                              <option key={item + 1} value={item + 1}>
+                                {item + 1}
+                              </option>
+                            )
+                          )}
+                        </Form.Control>
+                      </Col>
+                    </Row>
+                  </ListGroup.Item>
+                )}
                 <ListGroup.Item>
                   <Row>
                     <Button
                       className="btn-block"
                       type="button"
                       disabled={currentProduct.countInStock <= 0}
+                      onClick={addToCartHandler}
                     >
                       Add to Cart
                     </Button>

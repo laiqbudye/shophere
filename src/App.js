@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Dashboard from "./pages/Dashboard";
 import ProductPage from "./pages/ProductPage";
+import CartPage from "./pages/CartPage";
 import { store } from "./redux/store";
 import { Provider } from "react-redux";
 
@@ -19,6 +20,7 @@ function App() {
           <Container>
             <Route path="/" exact component={Dashboard} />
             <Route path="/product/:id" component={ProductPage} />
+            <Route path="/cart/:id?" component={CartPage} />
           </Container>
         </main>
         <Footer />
